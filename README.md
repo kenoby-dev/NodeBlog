@@ -23,21 +23,25 @@ GET /blog/posts/{id}
 
 POST /blog/posts
 
+```
 {
 	"Title": "{Title}",
 	"Content": "{Content}",
 	"Author": "{Author}"
 }
+```
 
 ### Update an existing blog post
 
 PUT /blog/posts/{id}
 
+```
 {
 	"Title": "{Title}",
 	"Content": "{Content}",
 	"Author": "{Author}"
 }
+```
 
 ### Delete an existing blog post
 
@@ -51,12 +55,13 @@ GET /blog/posts/{id}/comments
 
 POST /blog/posts/{id}/comments
 
+```
 {
 	"Content": "{Content}",
 	"Author": "{Author}",
 	"PostId": "{PostId}
 }
-
+```
 
 ## Storage
 
