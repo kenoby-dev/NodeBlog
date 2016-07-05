@@ -1,5 +1,7 @@
 # NodeBlog
 
+***< Under Construction >***
+
 A blogging engine built on:
 
 - nodejs REST API
@@ -13,49 +15,67 @@ The REST API offers the following endpoints:
 
 ### List all blog posts
 
+```
 GET /blog/posts
+```
 
 ### Retrieve a single blog post
 
+```
 GET /blog/posts/{id}
+```
 
 ### Add a new blog post
 
+```
 POST /blog/posts
 
-```
 {
 	"Title": "{Title}",
 	"Content": "{Content}",
-	"Author": "{Author}"
+	"Author": "{Author}",
+	"Tags": [
+		"{Tag1}",
+		"{Tag2}",
+		"{Tag3}"
+	]
 }
 ```
 
 ### Update an existing blog post
 
+```
 PUT /blog/posts/{id}
 
-```
 {
 	"Title": "{Title}",
 	"Content": "{Content}",
-	"Author": "{Author}"
+	"Author": "{Author}",
+	"Tags": [
+		"{Tag1}",
+		"{Tag2}",
+		"{Tag3}"
+	]
 }
 ```
 
 ### Delete an existing blog post
 
+```
 DELETE /blog/posts/{id}
+```
 
 ### Retrieve all comments for a blog post
 
+```
 GET /blog/posts/{id}/comments
+```
 
 ### Add a new comment to an existing blog post
 
+```
 POST /blog/posts/{id}/comments
 
-```
 {
 	"Content": "{Content}",
 	"Author": "{Author}",
@@ -81,6 +101,15 @@ The blog post details, including the content.
 | Content | The content of the blog post |
 | Author  | The author of the blog post |
 
+### PostTags (Table Storage)
+
+The tags associated with the blog post details.
+
+| Field  | Description |
+| ------ | ----------- |
+| PostId | Unique identifier of the blog post |
+| Tag    | A tag of the blog post |
+
 ### PostResources (Blob Storage)
 
 Any binary content attached to a blog post, such as an image.
@@ -90,9 +119,9 @@ Any binary content attached to a blog post, such as an image.
 | PostId | Unique identifier of the blog post |
 | Content | The binary content of any resources for the blog post |
 
-### Comments (Table Storage)
+### PostComments (Table Storage)
 
-A comment to a blog post.
+A comment for a blog post.
 
 | Field  | Description |
 | ------ | ----------- |
